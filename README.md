@@ -1,6 +1,13 @@
 # EC-ERP
 ERP for ElectricCharging
 
+Django ERP Framework Test
+
+## 스택
+Python 3.12.4
+Django 5.1
+
+
 ## 기간
 08.26 ~ 08.30 : 기획 및 DB 정의
 
