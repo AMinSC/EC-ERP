@@ -31,6 +31,22 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+'crequest', # Need access to the request object in places where request
+
+    'crispy_forms', # For the reports forms,
+    'crispy_bootstrap4',
+
+    'reversion', # needed only when you use the admin app
+    'tabular_permissions', # better a permission widget , Optional
+
+    'erp_framework',
+    "erp_framework.admin.jazzmin_integration", # if you want to use jazzmin theme, otherwise remove this line
+    'erp_framework.admin',
+    'erp_framework.reporting',
+    'slick_reporting',
+
+    'jazzmin', # optional
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -47,9 +63,18 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'crequest.middleware.CrequestMiddleware',
 ]
 
 ROOT_URLCONF = 'erp.urls'
+
+# ERP Framework
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+ERP_FRAMEWORK_SETTING_DEFAULT = {
+    "site_name": "ERP Framework System",
+    "site_header": "ERP Framework System",
+    "index_title": "ERP Framework Dashboard",
+}
 
 TEMPLATES = [
     {
