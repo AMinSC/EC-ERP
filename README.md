@@ -1,10 +1,12 @@
 # EC-ERP
 ERP for ElectricCharging
 
-Django ERP Framework Test
+[Django ERP Framework](https://django-erp-framework.readthedocs.io/en/latest/index.html) 를 사용해보려고 했으나,
+Sample Tutorial에서 안내하는 메서드 미구현
 
 ## 스택
 Python 3.12.4
+
 Django 5.1
 
 
