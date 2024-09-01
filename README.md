@@ -1,23 +1,15 @@
 # EC-ERP
 ERP for ElectricCharging
 
-[Django ERP Framework](https://django-erp-framework.readthedocs.io/en/latest/index.html) 를 사용해보려고 했으나,
-Sample Tutorial에서 안내하는 메서드 미구현
+[Django ERP Framework](https://django-erp-framework.readthedocs.io/en/latest/index.html) 라는 걸 찾게되어 테스트해보려고 했으나, Tutorial 실행이 안되어 중단.
+
+해결하기 위해 미비된 라이브러리 재설치, 버전 도 맞춰봤으나 실패.
+
 
 ## 스택
 Python 3.12.4
 
 Django 5.1
-
-
-## 기간
-08.26 ~ 08.30 : 기획 및 DB 정의
-
-09.02 ~ 09.06 : 기술 선정
-
-09.11 ~ : 구현 예정
-
-
 
 #### [Figjam](https://www.figma.com/board/qfnAYMr465GPgesbUgnaJ2/%EC%A0%84%EA%B8%B0%EC%B6%A9%EC%A0%84%EC%86%8C_ERP?node-id=0-1&t=oOI0q1hnH0WGPg6D-0)
 #### [ERD](https://www.erdcloud.com/d/x8CkAhn5bPjbQ5Zk2)
