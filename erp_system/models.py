@@ -28,10 +28,24 @@ class UserProfileManager(BaseUserManager):
         return user
 
 
+class Authority(models.Model):
+    authority_id = models.CharField(max_length=255, unique=True)
+    authority_name = models.CharField(max_length=255)
+    authority_menu = models.CharField(max_length=255)
+    authority_level_code = models.CharField(max_length=255)
+
+    def __str__(self) -> str:
+        return self.authority_name
+
+
 class UserProfile(AbstractBaseUser, PermissionsMixin):
     """ Database model for users in the system """
     email = models.EmailField(max_length=255, unique=True)
+    Authority_id = models.ForeignKey(Authority, on_delete=models.CASCADE, related_name='authority')
     name = models.CharField(max_length=255)
+    addr = models.CharField(max_length=255)
+    addr2 = models.CharField(max_length=255)
+    phone = models.CharField(max_length=11)
     is_admin = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
@@ -45,21 +59,17 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['name']
 
-    def __str__(self):
+    def __str__(self) -> str:
         """ Return string representation of our user """
         return self.email
 
 
-class Authority(models.Model):
-    pass
-
-
 class AuthorityMenu(models.Model):
-    pass
+    authority_menu_code = models.IntegerField(unique=True)
+    authority_menu_name = models.CharField(max_length=255)
 
-
-class InstallationRequest(models.Model):
-    pass
+    def __str__(self) -> str:
+        return self.authority_menu_name
 
 
 class Dealer(models.Model):
@@ -75,6 +85,10 @@ class ASRegister(models.Model):
 
 
 class History(models.Model):
+    pass
+
+
+class InstallationRequest(models.Model):
     pass
 
 
