@@ -1,8 +1,19 @@
 # EC-ERP
-ERP for ElectricCharging
+ERP for ElectricCharging with django project
 
-#### [Figjam](https://www.figma.com/board/qfnAYMr465GPgesbUgnaJ2/%EC%A0%84%EA%B8%B0%EC%B6%A9%EC%A0%84%EC%86%8C_ERP?node-id=0-1&t=oOI0q1hnH0WGPg6D-0)
-#### [ERD](https://www.erdcloud.com/d/x8CkAhn5bPjbQ5Zk2)
+
+### 기술 스택
+python 3.10.11
+
+django 4.2
+
+
+### 과제
+SECRET_KEY 재생성 및 보안상의 이유로 숨기기
+
+
+### [Figjam](https://www.figma.com/board/qfnAYMr465GPgesbUgnaJ2/%EC%A0%84%EA%B8%B0%EC%B6%A9%EC%A0%84%EC%86%8C_ERP?node-id=0-1&t=oOI0q1hnH0WGPg6D-0)
+### [ERD](https://www.erdcloud.com/d/x8CkAhn5bPjbQ5Zk2)
 - **User** (사용자 테이블)
   - 실질적으로 ERP를 운영 및 관리 하는 사용자의 정보를 저장하는 테이블
 - **Authority** (권한 테이블)
@@ -24,12 +35,6 @@ ERP for ElectricCharging
   - 딜러 정보가 저장된 테이블
 - **Client** (설치 고객 정보 테이블)
   - 설치 고객 정보가 저장된 테이블
-
-
-### 기술 스택
-python 3.10.11
-
-django 4.2
 
 
 ### [Django ERP Framework](https://django-erp-framework.readthedocs.io/en/latest/index.html)
