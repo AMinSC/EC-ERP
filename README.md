@@ -26,6 +26,10 @@ ERP for ElectricCharging
   - 설치 고객 정보가 저장된 테이블
 
 
+### 기술 스택
+python 3.10.11
+
+django 4.2
 
 
 ### [Django ERP Framework](https://django-erp-framework.readthedocs.io/en/latest/index.html)
