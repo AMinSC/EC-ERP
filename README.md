@@ -1,12 +1,6 @@
 # EC-ERP
 ERP for ElectricCharging
 
-[Django ERP Framework](https://django-erp-framework.readthedocs.io/en/latest/index.html) 라는 걸 찾게되어 테스트해보려고 했으나, Tutorial 실행이 안되어 중단.
-
-
-해결하기 위해 미비된 라이브러리 재설치, 버전 도 맞춰봤으나 실패.
-(정확히는 환경 세팅 및 호스팅은 가능하지만, admin 추가 시 에러 발생. -> 해결하기 위해 GitHub 코어 코드를 확인 결과 모듈 이름이 바뀐것 같아 수정. -> 하지만, 인수 값 2개중 1개가 iterable 한 객체가 오지 않은 에러로 실행 불가.., -> 이 객체는 모델 객체로 확인되었고 해결하려고 했지만, 상속받은 클래스 또한 프레임워크 클래스였고, 작년(2023) 6월이 마지막 커밋인 점과 장고 핵심 코어가 아닌, 프레임워크 코어 코드까지 수정해야되는 번거로움이 있어 중지. 장고 핵심 코어의 경우 학습 겸 수정해서 풀어갈 수 있지만, 사용하려는 프레임워크가 계속 발전 안될수도 있는점과 더불어 핵심코어를 수정해서 풀어가는 것보단 직접 만들어야겠다는 생각으로 중지)
-
 #### [Figjam](https://www.figma.com/board/qfnAYMr465GPgesbUgnaJ2/%EC%A0%84%EA%B8%B0%EC%B6%A9%EC%A0%84%EC%86%8C_ERP?node-id=0-1&t=oOI0q1hnH0WGPg6D-0)
 #### [ERD](https://www.erdcloud.com/d/x8CkAhn5bPjbQ5Zk2)
 - **User** (사용자 테이블)
@@ -30,3 +24,17 @@ ERP for ElectricCharging
   - 딜러 정보가 저장된 테이블
 - **Client** (설치 고객 정보 테이블)
   - 설치 고객 정보가 저장된 테이블
+
+
+
+
+### [Django ERP Framework](https://django-erp-framework.readthedocs.io/en/latest/index.html)
+
+해결하기 위해 미비된 라이브러리 재설치, 버전 도 맞춰봤으나 실패.
+
+1. 정확히는 환경 세팅 및 호스팅은 가능하지만, admin 추가 시 에러 발생
+2. 해결하기 위해 GitHub 코어 코드를 확인 결과 모듈 이름이 바뀐것 같아 수정.
+3. (2) 메서드 인수 값 2개중 1개가 iterable 한 객체가 오지 않은 에러로 실행 불가..
+4. iterable하지 않은 객체는 모델 객체로 확인되었고 해결하려고 했지만, 상속받은 클래스 또한 프레임워크 클래스인 것을 확인
+
+장고 핵심 코어의 경우 학습 겸 수정해서 풀어갈 수 있지만, 사용하려는 프레임워크가 계속 발전되지 않을수도 있는점(23년이 마지막 커밋)과 더불어 핵심코어를 수정해가며 풀어가는 번거로움 까지 감안해서 적용하기 보단, 직접 만들어야겠다는 생각으로 중지
