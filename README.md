@@ -3,9 +3,9 @@ ERP for ElectricCharging with django project
 
 
 ### 기술 스택
-python 3.10.11
+[python 3.10.11](https://devguide.python.org/versions/)
 
-django 4.2
+[django 4.2](https://docs.djangoproject.com/ko/5.1/faq/install/#what-python-version-can-i-use-with-django)
 
 
 ### 과제
