@@ -49,7 +49,7 @@ class Authority(models.Model):
 class UserProfile(AbstractBaseUser, PermissionsMixin):
     """ Database model for users in the system """
     email = models.EmailField(max_length=255, unique=True, primary_key=True, db_comment="관리자 이메일")
-    Authority_id = models.ForeignKey(Authority, on_delete=models.CASCADE, related_name='authority_id', db_comment="관리자 권한")
+    Authority_id = models.ForeignKey(Authority, on_delete=models.CASCADE, db_comment="관리자 권한")
     name = models.CharField(max_length=20, db_comment="관리자 이름")
     addr = models.CharField(max_length=255, db_comment="관리자 주소")
     addr2 = models.CharField(max_length=255, db_comment="관리자 상세 주소")
@@ -96,8 +96,8 @@ class InstallationRequest(models.Model):
     ist_req_contract_num = models.BigAutoField(unique=True, primary_key=True, db_comment="계약 번호")
     reception_num = models.CharField(max_length=20, db_comment="접수 번호")
     user_email = models.ForeignKey(UserProfile, on_delete=models.CASCADE, related_name='user_email', db_comment="이메일(담당자)")
-    dealer_id = models.ForeignKey(Dealer, on_delete=models.CASCADE, related_name='dealer_id', db_comment="딜러 번호")
-    client_id = models.ForeignKey(Client, on_delete=models.CASCADE, related_name='client_id', db_comment="고객 번호")
+    dealer_id = models.ForeignKey(Dealer, on_delete=models.CASCADE, db_comment="딜러 번호")
+    client_id = models.ForeignKey(Client, on_delete=models.CASCADE, db_comment="고객 번호")
     ist_req_date = models.DateTimeField(auto_now_add=True, db_comment="접수일")
     ist_req_vehi_num = models.CharField(max_length=10, db_comment="신청 대수")
     ist_req_type = models.CharField(max_length=20, db_comment="구분 (개인, 법인)")
@@ -110,7 +110,7 @@ class InstallationRequest(models.Model):
 
 class ASRegister(models.Model):
     as_register_num = models.BigAutoField(unique=True, primary_key=True, db_comment="AS 접수번호")
-    ist_req_contract_num = models.ForeignKey(InstallationRequest, on_delete=models.CASCADE, related_name="ist_id", db_comment="계약 번호")
+    ist_req_contract_num = models.ForeignKey(InstallationRequest, on_delete=models.CASCADE, related_name="as_ist_id", db_comment="계약 번호")
     as_engineer = models.CharField(max_length=20, db_comment="AS 설치기사")
     as_date = models.DateTimeField(db_comment="AS 방문 희망일")
     as_detail = models.TextField(db_comment="AS 내용")
@@ -120,7 +120,7 @@ class ASRegister(models.Model):
 
 
 class History(models.Model):
-    ist_req_contract_num = models.ForeignKey(InstallationRequest, on_delete=models.CASCADE, related_name="ist_id", db_comment="설치 계약 번호")
+    ist_req_contract_num = models.ForeignKey(InstallationRequest, on_delete=models.CASCADE, related_name="his_ist_id", db_comment="설치 계약 번호")
     sqno_num = models.BigAutoField(unique=True, primary_key=True, db_comment="상태변경 ID")
     history_update_name = models.CharField(max_length=20, db_comment="변경자")
     history_update_date = models.DateTimeField(db_comment="변경 일시")
