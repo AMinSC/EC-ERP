@@ -8,8 +8,12 @@ ERP for ElectricCharging with django project
 [django 4.2](https://docs.djangoproject.com/ko/5.1/faq/install/#what-python-version-can-i-use-with-django)
 
 
-### 과제
-SECRET_KEY 재생성 및 보안상의 이유로 숨기기
+### 과제 및 고민
+- 과제
+  - SECRET_KEY 재생성 및 보안상의 이유로 숨기기
+- 고민
+  - Foreign Key의 경우 related_name 참고해서 컬럼명 수정 고민
+  - SQLite의 경우 db_comments 미지원 참고
 
 
 ### [Figjam](https://www.figma.com/board/qfnAYMr465GPgesbUgnaJ2/%EC%A0%84%EA%B8%B0%EC%B6%A9%EC%A0%84%EC%86%8C_ERP?node-id=0-1&t=oOI0q1hnH0WGPg6D-0)
